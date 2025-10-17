@@ -1,0 +1,30 @@
+# Fichiers compilés et exécutables
+*.o
+*.exe
+be-sim
+test_sources
+
+# Résultats de simulations (ne pas committer)
+resultats/simulations/*.csv
+resultats/traces/*.png
+resultats/traces/*.pdf
+resultats/tests/*.csv
+resultats/tests/*.png
+resultats/tests/*.log
+
+# Anciens fichiers à la racine (au cas où)
+sources.csv
+circuit_output.csv
+*.png
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Système
+.DS_Store
+__pycache__/
+*.pyc

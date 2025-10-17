@@ -1,0 +1,9 @@
+{
+  "A_step": {
+    "t0": 0.0,
+    "t1": 5e-7,
+    "dt": 1e-10,
+    "source": { "type": "echelon", "amplitude": 1.0, "offset": 0.0, "delay": 0.0 },
+    "circuit": { "type": "A", "R": 1000.0, "C": 1e-12 }
+  }
+}
