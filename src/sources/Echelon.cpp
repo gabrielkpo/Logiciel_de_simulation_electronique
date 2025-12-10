@@ -1,16 +1,22 @@
 #include "source.hpp"
 #include <cmath>
+#include <iostream>
+#include <limits>
 using namespace std;  
 
 // Constructeur par défaut
 
 EchelonSource::EchelonSource() {
-    amplitude_ = 1.0;
-    startTime_ = 0.0;
-    offset_ = 0.0;
+    cout << "--- Initialisation EchelonSource ---" << endl;
+    double A = 5.0, t0 = 0.0, off = 0.0;
+    cout << "Amplitude (V) ? [5] "; if(!(cin >> A)) { cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n'); A = 5.0; }
+    cout << "Start time (s) ? [0] "; if(!(cin >> t0)) { cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n'); t0 = 0.0; }
+    cout << "Offset (V) ? [0] "; if(!(cin >> off)) { cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n'); off = 0.0; }
+    amplitude_ = A; startTime_ = t0; offset_ = off;
 }
 
 // Constructeur paramétré
+
 
 EchelonSource::EchelonSource(double amplitude, double startTime) {
     amplitude_ = amplitude;

@@ -3,7 +3,10 @@
 
 #include <string>
 
-// Classe pour gérer les paramètres de simulation
+// On définit une classe pour gérer les paramètres de simulation
+// On définit les méthodes, getters, setters ainsi que les paramètres privés
+
+
 class Simulation {
 public:
     // Constructeurs

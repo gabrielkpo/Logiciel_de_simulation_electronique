@@ -4,6 +4,11 @@ using namespace std;
 
 // Constructeur par défaut
 Simulation::Simulation() : npas_(1000), tmax_(2.0) {
+
+// ici on rentre des valeurs par défaut
+    npas_ = 20000;
+    tmax_ = 500e-9;
+
     calculerDt();
 }
 
@@ -20,9 +25,9 @@ void Simulation::calculerDt() {
 // Lire les paramètres depuis l'utilisateur
 void Simulation::lireParametres() {
     cout << "=== Configuration de la simulation ===" << endl;
-    cout << "Nombre de points (npas) ? ";
+    cout << "Nombre de points (npas)[20000] ? ";
     cin >> npas_;
-    cout << "Temps maximum (tmax en secondes) ? ";
+    cout << "Temps maximum (tmax en secondes)[1] ? ";
     cin >> tmax_;
     
     calculerDt();  // Recalculer dt après lecture

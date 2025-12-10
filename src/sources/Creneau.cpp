@@ -1,14 +1,18 @@
 #include "source.hpp"
 #include <cmath>
+#include <iostream>
+#include <limits>
 using namespace std;  
 
 // Constructeur par défaut
-
 CreneauSource::CreneauSource() {
-    amplitude_ = 1.0;
-    frequency_ = 1.0;
-    dutyCycle_ = 0.5;
-    offset_ = 0.0;
+    std::cout << "--- Initialisation CreneauSource ---" << std::endl;
+    double A=5.0, f=50.0, duty=0.5, off=0.0;
+    std::cout << "Amplitude (V) ? [5] "; if(!(std::cin >> A)) { std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); A=5.0; }
+    std::cout << "Fréquence (Hz) ? [50] "; if(!(std::cin >> f)) { std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); f=50.0; }
+    std::cout << "Duty cycle (0-1) ? [0.5] "; if(!(std::cin >> duty)) { std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); duty=0.5; }
+    std::cout << "Offset (V) ? [0] "; if(!(std::cin >> off)) { std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); off=0.0; }
+    amplitude_ = A; frequency_ = f; dutyCycle_ = duty; offset_ = off;
 }
 
 // Constructeur paramétré
