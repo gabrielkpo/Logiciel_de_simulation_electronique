@@ -1,0 +1,202 @@
+/* Blue Abyss theme - modern dark gradient with glassy cards */
+:root{
+  --bg-1: #021028; /* deep navy */
+  --bg-2: #00192e; /* abyss blue */
+  --card: rgba(10,20,35,0.72);
+  --card-2: rgba(8,14,26,0.6);
+  --muted: #9fb6d6;
+  --accent: #4fb0ff; /* brighter blue */
+  --accent-2: #2b6cff;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 14px;
+}
+
+body, .app-root, .container{
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(43,108,204,0.12), transparent 10%),
+              radial-gradient(800px 400px at 90% 90%, rgba(16,46,92,0.14), transparent 8%),
+              linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  color: #eaf6ff;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin: 0;
+  padding: 20px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+.left-column{
+  flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-column{
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(6px) saturate(120%);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(2,10,30,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid rgba(79,176,255,0.06);
+}
+
+.card-header h3{
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #e7f6ff;
+}
+
+.params-card .params-section{
+  margin-bottom: 10px;
+}
+
+.param-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.param-row label{
+  color: var(--muted);
+  font-size: 13px;
+  min-width: 120px;
+}
+
+/* Inputs and dropdowns styling */
+/* Inputs and dropdowns styling */
+input[type="number"], .Select, .dash-dropdown, .Select__control, .css-1hwfws3, .dash-dropdown .Select-control {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #eaf6ff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  outline: none;
+  width: 140px;
+}
+
+input[type="number"]:focus, .Select:focus, .dash-dropdown:focus{
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(47,127,255,0.08);
+}
+
+.run-button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #001827;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(43,108,204,0.18);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.run-button:hover{ transform: translateY(-2px); box-shadow: 0 14px 40px rgba(43,108,204,0.22); }
+
+.run-button:active{ transform: translateY(0); }
+
+.table-card .dash-table-container{
+  max-height: 340px; overflow: auto;
+}
+
+.sim-info{
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Card accent line */
+.card::before{
+  content: '';
+  display: block;
+  height: 4px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(90deg, rgba(79,176,255,0.9), rgba(43,108,204,0.9));
+  margin: -18px -18px 12px -18px;
+}
+
+/* DataTable tweaks */
+.dash-table-container .dash-spreadsheet, .dash-table-container .dash-spreadsheet td, .dash-table-container .dash-spreadsheet th {
+  background: transparent !important;
+  color: #dff3ff !important;
+}
+
+/* Make the inner table area match the card glass background */
+.dash-table-container .dash-spreadsheet-container {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.dash-table-container .dash-spreadsheet th{
+  background: rgba(10,20,35,0.4) !important;
+  color: #cfefff !important;
+  font-weight: 700;
+}
+
+/* Rows */
+.dash-table-container .dash-spreadsheet td{
+  background: rgba(8,14,26,0.25) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.02) !important;
+}
+
+/* Hover/selected */
+.dash-table-container .dash-spreadsheet tr:hover td{ background: rgba(47,127,255,0.04) !important; }
+.dash-table-container .dash-spreadsheet tr.sd-row-selected td{ background: rgba(47,127,255,0.07) !important; }
+
+/* Pagination controls and header actions */
+.dash-pagination, .dash-table-container .column-header--sort{ color: #cfefff !important; }
+
+/* Themed dropdowns: ensure menus, options and control are dark */
+.themed-dropdown .Select-control, .themed-dropdown .Select-placeholder, .themed-dropdown .Select-value {
+  background: transparent !important;
+  color: #eaf6ff !important;
+}
+
+.themed-dropdown .Select-menu-outer, .themed-dropdown .css-26l3qy-menu {
+  background: rgba(8,14,26,0.95) !important;
+  border: 1px solid rgba(79,176,255,0.06) !important;
+  color: #dff3ff !important;
+  box-shadow: 0 8px 30px rgba(2,10,30,0.6) !important;
+}
+
+.themed-dropdown .Select-option, .themed-dropdown .css-yt9ioa-option {
+  background: transparent !important;
+  color: #dff3ff !important;
+}
+
+.themed-dropdown .Select-option.is-selected, .themed-dropdown .css-1n7v3ny-option.is-selected {
+  background: rgba(47,127,255,0.08) !important;
+}
+
+/* Prevent nested card look inside dropdowns */
+.themed-dropdown .Select-control .Select-value, .themed-dropdown .Select-control .Select-placeholder{ padding-left: 6px !important; }
+
+/* Fallback targeting for newer dash select classes */
+.themed-dropdown .css-1uccc91-singleValue{ color: #eaf6ff !important; }
+.themed-dropdown .css-1wa3eu0-placeholder{ color: #9fb6d6 !important; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .container{ flex-direction: column; }
+  .left-column, .right-column{ width: 100%; }
+}
+
+/* small helper animations */
+.card, .run-button{ transition: all 180ms ease; }
